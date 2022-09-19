@@ -1,0 +1,26 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  name: vicky
+  demands:
+   - agent.Name -equals vickyWindowsSelfHosted
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- task: katalonTask@1
+  inputs:
+    version: '8.4.1'
+    executeArgs: '-retry=0 -testSuitePath="Test Suites/New Test Suite" -browserType="IE" -executionProfile="default" -apiKey="61e87237-46bf-4fe8-a4b7-e374cf99dded"'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
