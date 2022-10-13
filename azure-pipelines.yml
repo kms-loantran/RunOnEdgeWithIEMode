@@ -7,9 +7,10 @@ trigger:
 - master
 
 pool:
-  name: vicky
-  demands:
-   - agent.Name -equals vickyWindowsSelfHosted
+  vmImage: windows-latest
+#  name: vicky
+#  demands:
+#   - agent.Name -equals vickyWindowsSelfHosted
 
 steps:
 - script: echo Hello, world!
@@ -17,8 +18,8 @@ steps:
 
 - task: katalonTask@1
   inputs:
-    version: '8.4.1'
-    executeArgs: '-retry=0 -testSuitePath="Test Suites/New Test Suite" -browserType="IE" -executionProfile="default" -apiKey="61e87237-46bf-4fe8-a4b7-e374cf99dded"'
+    version: '8.5.1'
+    executeArgs: '-retry=0 -testSuitePath="Test Suites/New Test Suite" -browserType="IE" -executionProfile="default" -apiKey="9a5b5694-110c-49b1-9259-583fef12b40b"'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
