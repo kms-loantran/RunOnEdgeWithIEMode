@@ -40,6 +40,11 @@ def static "com.kms.katalon.keyword.applitools.BasicKeywords.checkTestObject"(
 }
 
 
+def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesInit"() {
+    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesInit()
+}
+
+
 def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesOpen"(
     	String testName	
      , 	RectangleSize viewportSize	) {
@@ -56,11 +61,6 @@ def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesClose"(
 }
 
 
-def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesInit"() {
-    (new com.kms.katalon.keyword.applitools.EyesKeywords()).eyesInit()
-}
-
-
 def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesOpenWithBaseline"(
     	String baselineName	
      , 	String testName	
@@ -69,29 +69,4 @@ def static "com.kms.katalon.keyword.applitools.EyesKeywords.eyesOpenWithBaseline
         	baselineName
          , 	testName
          , 	viewportSize)
-}
-
-
-def static "com.testwithhari.katalon.plugins.Browserstack.updateTestName"(
-    	String sessionID	
-     , 	String TestName	) {
-    (new com.testwithhari.katalon.plugins.Browserstack()).updateTestName(
-        	sessionID
-         , 	TestName)
-}
-
-
-def static "com.testwithhari.katalon.plugins.Browserstack.updateTestStatusAndReason"(
-    	String sessionID	
-     , 	String testStatus	
-     , 	String reasonForFailure	) {
-    (new com.testwithhari.katalon.plugins.Browserstack()).updateTestStatusAndReason(
-        	sessionID
-         , 	testStatus
-         , 	reasonForFailure)
-}
-
-
-def static "com.testwithhari.katalon.plugins.Browserstack.getCurrentTestRunSessionID"() {
-    (new com.testwithhari.katalon.plugins.Browserstack()).getCurrentTestRunSessionID()
 }
